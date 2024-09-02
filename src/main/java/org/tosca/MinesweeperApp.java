@@ -29,6 +29,7 @@ public class MinesweeperApp {
 //                System.out.println();
 //                GridOutputHelper.printHiddenCells(minesweeper.getHiddenCells(), minesweeper.getSize());
 //                System.out.println();
+
                 GridOutputHelper.printGameBoard(minesweeper.getVisibleCells(), minesweeper.getHiddenCells(), minesweeper.getSize());
                 System.out.println();
 
