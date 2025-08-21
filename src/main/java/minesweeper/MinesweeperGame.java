@@ -37,15 +37,21 @@ public class MinesweeperGame {
 
             boolean validMove = board.revealCell(move.getRow(), move.getCol());
 
-            if (!validMove && board.isGameOver()) {
-                System.out.println("Oh no, you detonated a mine! Game over.");
-
-                board.display();
-
-                return;
+            if (validMove) {
+                System.out.println("This square contains " + board.getCell(move.getRow(), move.getCol()).getAdjacentMines() + " adjacent mine(s).");
             }
+            else {
+                if (board.isGameOver()) {
+                    System.out.println("Oh no, you detonated a mine! Game over.");
 
-            System.out.println("This square contains " + board.getCell(move.getRow(), move.getCol()).getAdjacentMines() + " adjacent mine(s).");
+                    board.display();
+
+                    return;
+                }
+                else {
+                    System.out.println("Invalid move.");
+                }
+            }
         }
 
         if (board.isGameWon()) {
