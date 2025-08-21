@@ -39,16 +39,14 @@ public class MinesweeperGame {
 
             if (validMove) {
                 System.out.println("This square contains " + board.getCell(move.getRow(), move.getCol()).getAdjacentMines() + " adjacent mine(s).");
-            }
-            else {
+            } else {
                 if (board.isGameOver()) {
                     System.out.println("Oh no, you detonated a mine! Game over.");
 
                     board.display();
 
                     return;
-                }
-                else {
+                } else {
                     System.out.println("Invalid move.");
                 }
             }
